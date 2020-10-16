@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div id='wrapper' class='ui main text container'>
+    <div class='ui huge header'>Who Needs Another Blog?</div>
+    <div class='ui top attached segment'>
+        <div class='ui divided items'>
+            <% blogs.forEach(function(blog){ %>
+                <div class='item'>
+                    <div class='image'><img src='<%= blog.image %>'>
+                </div>
+                <div class='content'>
+                    <a class='header' href='/blogs/<%= blog._id %>'><%=blog.title%></a>
+                    <div class='meta'>
+                        <span><%= blog.created.toDateString() %> </span>
+                    </div>
+                    <div class='description'>
+                        <p><%- blog.body.substring(0, 100) %>...</p>
+                    </div>
+                    <div class='extra'>
+                        <a class='ui floated  small    secondary button'href='/blogs/<%= blog._id %>'><%=blog.title%> 
+                            Read More
+                            <i class='right chevron icon'></i>
+                        </a>
+
+                    </div>
+                </div> 
+                </div>
+            <% }) %>
+        </div>
+    </div>
+   <a href='https://open.spotify.com/playlist/7iatP5J3fqedAlm1jioitK?si=Vmr4Dl1VTZCkzZgwHCzglw'>
+    <i id='spotify' class='medium spotify icon'></i>
+   </a>
+
+   <a href='https://www.instagram.com/tjisyourhero/'>
+    <i id='instagram' class='instagram icon'></i>
+   </a>
+   
+</div>
+
+<%- include('partials/header') %>
