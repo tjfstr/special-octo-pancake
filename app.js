@@ -6,10 +6,9 @@ const methodOverride  = require('method-override');
 const mongoose        = require('mongoose');
 const expressSanitizer = require('express-sanitizer');
 const user = require('../YelpCamp/models/user');
-
-app = express(); 
-
 //APP CONFIG
+app = express(); 
+//going to add a proper database soon
 mongoose.connect('mongodb://localhost:27017/blog_app', {
   useNewUrlParser: true,
   useUnifiedTopology: true
