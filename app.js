@@ -5,8 +5,11 @@ const bodyParser      = require('body-parser');
 const methodOverride  = require('method-override');
 const mongoose        = require('mongoose');
 const expressSanitizer = require('express-sanitizer');
-const user = require('../YelpCamp/models/user');
-//APP CONFIG
+const user            = require('../YelpCamp/models/user');
+////////////////
+///APP CONFIG///
+////////////////
+
 app = express(); 
 //going to add a proper database soon
 mongoose.connect('mongodb://localhost:27017/blog_app', {
@@ -21,18 +24,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
-
 ////////////////////////////
 //////Passport Config //////
 ////////////////////////////
-
-
 
 ///////////////////////////
 //MONGOOSE MODEL CONFIG ///
 ///////////////////////////
 
-//Blog Schema
+///////////////////
+///Blog Schema/////
+///////////////////
 const blogSchema = new mongoose.Schema({
     title: String,
     image: String,
